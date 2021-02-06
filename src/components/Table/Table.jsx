@@ -20,7 +20,12 @@ const Table = () => {
         const filteredUsers = users.filter((user => {
             return user.phone.includes(searchTerm);
         });
-       setUsersToDisplay(filteredUsers); 
+       
+        setUsersToDisplay(filteredUsers); 
+    };
+
+    const handleReset = () => {
+        setUsersToDisplay(users);
     }
     
     const sortByName = () => {
@@ -77,6 +82,9 @@ const Table = () => {
                 }}
                 ></input>
                 <button classnName="btn btn-primary">Search</button>
+                <button className="btn btn-secondary"
+                        onClick={handleReset}
+                        type="button">Reset
             </div>
             <div>
               <table className="table table-striped">
