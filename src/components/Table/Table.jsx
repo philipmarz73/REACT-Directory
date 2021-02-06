@@ -49,7 +49,7 @@ const Table = () => {
           <tr key={index}>
             <th scope="row">{user.id.value}</th>
             <td>
-                <img src={user.picture.thumbnail}></img>
+                <img src={user.picture.thumbnail} alt={user.name.first}></img>
             </td>
             <td>{user.name.first} {user.name.last}
             </td>
