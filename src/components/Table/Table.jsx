@@ -45,8 +45,8 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
-          <tr>
+          {usersToDisplay.map((user, index) => (
+          <tr key={index}>
             <th scope="row">{user.id.value}</th>
             <td>
                 <img src={user.picture.thumbnail}></img>
