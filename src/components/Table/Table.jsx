@@ -38,7 +38,7 @@ const Table = () => {
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Photo</th>
-            <th scope="col">Name</th>
+            <th scope="col" onClick={sortByName}>Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
             <th scope="col">DOB</th>
