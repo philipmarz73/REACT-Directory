@@ -12,8 +12,15 @@ const Table = () => {
             console.log(response.data);
             setUsersToDisplay(response.data.results);
             setUsers(response.data.results);
-        })
+        });
     }, []);
+    
+    const handleSubmit = () => {
+        const filteredUsers = users.filter(user => {
+            return user.phone.includes(searchTerm);
+        });
+        
+    }
     
     const sortByName = () => {
             if (sortDirection === "asc") {
