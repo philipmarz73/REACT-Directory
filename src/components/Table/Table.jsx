@@ -4,8 +4,7 @@ import axios from "axios";
 const Table = () => {
     const [users, setUsers] = useState([]);
     const [usersToDisplay, setUsersToDisplay] = useState([]);
- 
-    
+    const [sortDirection, setSortDirection] = useState("asc");    
     useEffect(() => {
         axios.get ("https://randomuser.me/api/?results=50").then(response => {
             console.log(response.data);
