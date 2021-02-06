@@ -57,6 +57,14 @@ const Table = () => {
             console.log(sortedUsers);
         setUsersToDisplay(sortedUsers);
     return (
+        <div>
+            <div>
+                <input type="text" placeholder="Enter phone number to filter"></input>
+                <button classnName="btn btn-primary">Search</button>
+            </div>
+        </div>
+        
+        
         <table className="table table-striped">
         <thead>
           <tr>
