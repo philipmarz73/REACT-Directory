@@ -13,6 +13,11 @@ const Table = () => {
             setUsers(response.data.results);
         })
     }, []);
+    const sortByName = () => {
+        const sortedUsers = users.sort();
+        console.log(sortedUsers);
+    }
+    
     return (
         <table className="table table-striped">
         <thead>
