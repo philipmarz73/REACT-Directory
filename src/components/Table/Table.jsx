@@ -69,17 +69,20 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user => (
+          {users.map((user) => (
           <tr>
-            <th scope="row">4e07944e-c95c-40fb-9452-14970171912d</th>
+            <th scope="row">{user.id.value}</th>
             <td>
-                <img src="https://randomuser.me/api/portraits/women/4.jpg"></img>
+                <img src={user.picture.thumbnail}></img>
             </td>
-            <td>Diane Walters</td>
-            <td>diane.walters@example.com"</td>
-            <td>016974 11023</td>
-            <td>1975-11-07T16:48:33.912Z</td>
+            <td>{user.name.first} {user.name.last}
+            </td>
+            <td>{user.email}
+            </td>
+            <td>{user.phone}</td>
+            <td>{user.dob.date}</td>
           </tr>
+          ))}
         </tbody>
       </table>
     );
