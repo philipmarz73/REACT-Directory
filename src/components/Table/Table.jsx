@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Table = () => {
     const [users, setUsers] = useState([]);
-    
+    const [usersToDisplay, setUsersToDisplay] = useState([]);
  
     
     useEffect(() => {
@@ -13,10 +13,24 @@ const Table = () => {
             setUsers(response.data.results);
         })
     }, []);
+    
     const sortByName = () => {
-        const sortedUsers = users.sort();
-        console.log(sortedUsers);
-    }
+        const tempUsers = [...users];
+        const sortedUsers = tempUsers.sort((a,b) => {
+            const aValue = a.name.first;
+            const bValue = b.name.first;
+            if (aValue < bValue) {
+                return -1;
+            }
+            if (aValue > bValue) {
+                return 1;
+            }
+                return 0;
+        });
+            console.log(sortedUsers);
+        setUsersToDisplay(sortedUsers);
+       
+    };
     
     return (
         <table className="table table-striped">
