@@ -69,9 +69,12 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
+          {users.map((user => (
           <tr>
             <th scope="row">4e07944e-c95c-40fb-9452-14970171912d</th>
-            <td><img src="https://randomuser.me/api/portraits/women/4.jpg"></img></td>
+            <td>
+                <img src="https://randomuser.me/api/portraits/women/4.jpg"></img>
+            </td>
             <td>Diane Walters</td>
             <td>diane.walters@example.com"</td>
             <td>016974 11023</td>
