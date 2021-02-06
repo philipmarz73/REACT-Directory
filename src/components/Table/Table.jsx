@@ -15,11 +15,12 @@ const Table = () => {
         });
     }, []);
     
-    const handleSubmit = () => {
-        const filteredUsers = users.filter(user => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const filteredUsers = users.filter((user => {
             return user.phone.includes(searchTerm);
         });
-        
+       setUsersToDisplay(filteredUsers); 
     }
     
     const sortByName = () => {
