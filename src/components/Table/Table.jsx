@@ -5,7 +5,7 @@ const Table = () => {
     const [users, setUsers] = useState([]);
     const [usersToDisplay, setUsersToDisplay] = useState([]);
     const [sortDirection, setSortDirection] = useState("asc");  
-    const [searchTerm, setSearchTerm] = useState("")
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         axios.get ("https://randomuser.me/api/?results=50").then(response => {
@@ -17,12 +17,12 @@ const Table = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        const filteredUsers = users.filter((user => {
+        const filteredUsers = users.filter(user => {
             return user.phone.includes(searchTerm);
-        });
+    });
        
         setUsersToDisplay(filteredUsers); 
-    };
+}
 
     const handleReset = () => {
         setUsersToDisplay(users);
@@ -70,9 +70,11 @@ const Table = () => {
         });
             console.log(sortedUsers);
         setUsersToDisplay(sortedUsers);
+    };
     return (
         <div>
             <div>
+              <form onSubmit={handleSubmit}>
                 <input type="text" 
                  placeholder="Enter phone number to filter"
                  name="searchTerm" 
@@ -85,8 +87,9 @@ const Table = () => {
                 <button className="btn btn-secondary"
                         onClick={handleReset}
                         type="button">Reset
+            </button>
+            </form>
             </div>
-            <div>
               <table className="table table-striped">
                <thead>
                 <tr>
@@ -115,6 +118,8 @@ const Table = () => {
           ))}
         </tbody>
       </table>
+      </div>
+      
     );
 };
 
